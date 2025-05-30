@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:22:59 by eramanit          #+#    #+#             */
-/*   Updated: 2025/05/25 05:43:03 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/05/30 14:25:27 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,35 @@ void	freeMap(char **map)
 	free(map);
 }
 
-int gere_mouse(int x,int y,int button,void*toto)
+int gere_mouse(int button, int x,int y,void*toto)
 {
-	(void)x;
-	(void)y;
 	(void)button;
 	(void)toto;
-  	printf("Mouse event - new win\n");
+  	printf("Mouse event - new win (%d,%d)\n", x, y);
 	return (0);
+}
+
+void	ft_draw_vector(void	*mlx, void *win, t_point p1, t_point p2)
+{
+	int	i;
+	int	j;
+	int color;
+	float	a;
+	float	b;
+
+	a =(float) (p1.y - p2.y) / (p1.x - p2.x);
+	b =(float) a * -(p1.x) + p1.y;
+	color = 0xffffff;
+	if (p2.x < p1.x)
+		i = p2.x;
+	else
+		i = p1.x;
+	while ((i <= p2.x && i >= p1.x) || (i <= p1.x && i >= p2.x))
+	{
+		j = a * i + b;
+		mlx_pixel_put(mlx, win, i, j, color);
+		i++;
+	}
 }
 
 int main(int ac, char const **av)
@@ -74,13 +95,25 @@ int main(int ac, char const **av)
 	char	**map;
 	void 	*mlx;
 	void 	*win;
+	void 	*canvas;
+	void 	*img;
+
+	t_point p1 = {1, 0};
+	t_point p2 = {20, 250};
 
 	ft_handle_arg(ac, av);
 	map = ft_read_file((char *) av[1]);
 	freeMap(map);
 	mlx = mlx_init();
-	win = mlx_new_window(mlx,300,300,"win");
+	win = mlx_new_window(mlx,WIDTH,HEIGHT,"FdF");
+	canvas = mlx_new_image(mlx, WIDTH, HEIGHT);
+	img = mlx_new_image(mlx, WIDTH, HEIGHT);
+	
+	ft_draw_vector(mlx, win, p1, p2);
+	
 	mlx_mouse_hook(win,gere_mouse,0);
 	mlx_loop(mlx);
+	mlx_destroy_image(mlx, img);
+	mlx_destroy_window(mlx, win);
 	return (0);
 }

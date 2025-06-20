@@ -6,7 +6,7 @@
 #    By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/24 22:28:52 by eramanit          #+#    #+#              #
-#    Updated: 2025/05/25 05:40:47 by eramanit         ###   ########.fr        #
+#    Updated: 2025/06/20 11:51:45 by eramanit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,15 @@ LIBFT	=	./libft
 
 CFLAG	=	-Wall -Wextra -Werror
 
-SRC		=	main.c
+GET_NEXT_LINE = get_next_line.c get_next_line_utils.c
+
+FDF		=	drawer.c reader.c
+
+SRC		=	main.c \
+			$(addprefix get_next_line/, $(GET_NEXT_LINE)) \
+			$(addprefix drawers/, $(FDF)) \
+
+OBJ		=	$(SRC:.c=.o)
 
 MLFLAG	=	-L./minilibx -lmlx -lXext -lX11
 

@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:22:59 by eramanit          #+#    #+#             */
-/*   Updated: 2025/07/27 11:35:50 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 11:58:36 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,9 @@ int	main(int ac, char const **av)
 	fd = open(av[1], O_RDONLY);
 	fdf.map = ft_init_map(fd);
 	close(fd);
-	if (fdf.map.w == (size_t) -1)
-	{
-		ft_free_map(fdf.map);
-		ft_putstr_fd("Error\n", 1);
+	if (ft_check_map(fdf.map))
 		exit(0);
-	}
-	
-	test_map(fdf.map);
+	ft_init_fdf(&fdf);
 	ft_free_map(fdf.map);
 	return (0);
 }

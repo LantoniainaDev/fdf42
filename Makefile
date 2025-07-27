@@ -6,7 +6,7 @@
 #    By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/24 22:28:52 by eramanit          #+#    #+#              #
-#    Updated: 2025/07/27 12:23:08 by eramanit         ###   ########.fr        #
+#    Updated: 2025/07/27 12:36:50 by eramanit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAG	=	-Wall -Wextra -Werror
 
 GET_NEXT_LINE = get_next_line.c get_next_line_utils.c
 
-FDF		=	drawer.c reader.c
+FDF		=	drawer.c reader.c events.c
 
 SRC		=	main.c \
 			$(addprefix get_next_line/, $(GET_NEXT_LINE)) \

@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:22:12 by eramanit          #+#    #+#             */
-/*   Updated: 2025/07/27 12:01:24 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 15:37:19 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ t_map	ft_init_map(int fd);
 void	ft_free_map(t_map map);
 int		ft_check_map(t_map map);
 void	ft_init_fdf(t_fdf *fdf);
+int		handle_quit(t_fdf *fdf);
 
 #endif

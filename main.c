@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:22:59 by eramanit          #+#    #+#             */
-/*   Updated: 2025/07/27 11:58:36 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 15:36:25 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	main(int ac, char const **av)
 	if (ft_check_map(fdf.map))
 		exit(0);
 	ft_init_fdf(&fdf);
+	mlx_loop(fdf.mlx);
 	ft_free_map(fdf.map);
 	return (0);
 }

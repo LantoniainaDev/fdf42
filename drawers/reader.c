@@ -6,11 +6,11 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 10:50:17 by eramanit          #+#    #+#             */
-/*   Updated: 2025/07/27 09:31:24 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 09:56:40 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fdf.h"
+#include "fdf.h"
 
 size_t	ft_get_len(char *row)
 {

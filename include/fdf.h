@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:22:12 by eramanit          #+#    #+#             */
-/*   Updated: 2025/07/27 09:30:26 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 10:00:00 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 # include "libft.h"
 # include <fcntl.h>
 # include <stdio.h>
-# include "minilibx/mlx.h"
-# include "get_next_line/get_next_line.h"
-# include "libft/libft.h"
+# include "mlx.h"
+# include "get_next_line.h"
 # define WIDTH 300
 # define HEIGHT 300
 

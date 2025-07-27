@@ -6,7 +6,7 @@
 #    By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/24 22:28:52 by eramanit          #+#    #+#              #
-#    Updated: 2025/06/20 11:51:45 by eramanit         ###   ########.fr        #
+#    Updated: 2025/07/27 09:59:43 by eramanit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ NAME	=	fdf
 CC		=	cc
 
 LIBFT	=	./libft
+
+INC		=	./include
 
 CFLAG	=	-Wall -Wextra -Werror
 
@@ -35,7 +37,7 @@ all		:	$(NAME)
 
 $(NAME)	: $(SRC)
 	@make -C $(LIBFT)
-	@$(CC) $(CFLAG) -L$(LIBFT) -lft $(MLFLAG) $(SRC) ./minilibx/libmlx.a ./libft/libft.a -I $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAG) -L$(LIBFT) -lft $(MLFLAG) $(SRC) ./libft/libft.a ./minilibx/libmlx.a -I $(INC) -I ./minilibx -o $(NAME)
 	@echo "\033[33mFdF :: compiled\033[00m"
 
 clean	:

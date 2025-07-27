@@ -6,17 +6,24 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:16:57 by eramanit          #+#    #+#             */
-/*   Updated: 2025/07/27 15:36:30 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 16:36:33 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_init_fdf(t_fdf *fdf)
+void	ft_put_color(unsigned int color, int x, int y, t_addr addr)
 {
-	fdf->mlx = mlx_init();
-	fdf->win = mlx_new_window(fdf->mlx, WIDTH, HEIGHT, "fdf");
-	fdf->canvas = mlx_new_image(fdf->mlx, WIDTH, HEIGHT);
-	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->canvas, 0, 0);
-	mlx_hook(fdf->win, 17, 0, handle_quit, fdf);
+	char	*pxl;
+
+	pxl = addr.addr + (y * addr.sl + x * (addr.bpp / 8));
+	*(unsigned int *)pxl = color;
+}
+
+void	ft_draw_line(char *p1, char *p2, t_fdf env)
+{
+	ft_putstr_fd(p1, 1);
+	ft_putstr_fd("\n", 1);
+	ft_putstr_fd(p2, 1);
+	ft_put_color(0xffff0000, WIDTH / 2, HEIGHT / 2, env.addr);
 }

@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 00:22:12 by eramanit          #+#    #+#             */
-/*   Updated: 2025/06/20 11:49:11 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 09:30:26 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 
 typedef struct s_map
 {
-	size_t w;
-	size_t h;
+	size_t	w;
+	size_t	h;
 	char	**rows;
-} t_map;
+}	t_map;
 
 typedef struct s_fdf
 {
@@ -35,7 +35,7 @@ typedef struct s_fdf
 	void	*canvas;
 	void	*mlx;
 	t_map	map;
-} t_fdf;
+}	t_fdf;
 
 t_map	ft_init_map(int fd);
 size_t	ft_get_len(char *row);

@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:22:59 by eramanit          #+#    #+#             */
-/*   Updated: 2025/06/20 11:55:19 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 09:31:07 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ void	ft_handle_arg(int ac, char const **av)
 		exit(1);
 	}
 }
-
-// void	ft_handle_file(int ac, char const **av)
-// {
-
-// }
 
 int	handle_key(int button)
 {
@@ -44,7 +39,6 @@ int	main(int ac, char const **av)
 	fdf.map = ft_init_map(fd);
 	close(fd);
 	fd = 0;
-
 	while (fdf.map.rows[fd])
 	{
 		ft_putstr_fd(fdf.map.rows[fd], 1);

@@ -6,7 +6,7 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/20 10:50:17 by eramanit          #+#    #+#             */
-/*   Updated: 2025/06/20 11:46:58 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 09:31:24 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_get_len(char *row)
 {
-	size_t len;
+	size_t	len;
 	size_t	i;
 
 	i = 1;

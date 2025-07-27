@@ -6,11 +6,32 @@
 /*   By: eramanit <eramanit@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 22:22:59 by eramanit          #+#    #+#             */
-/*   Updated: 2025/07/27 09:31:07 by eramanit         ###   ########.fr       */
+/*   Updated: 2025/07/27 11:35:50 by eramanit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	test_map(t_map map)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (map.rows[i])
+	{
+		j = 0;
+		while (j < map.w && map.rows[i][j])
+		{
+			ft_putstr_fd(map.rows[i][j], 1);
+			ft_putstr_fd(" ", 1);
+			j++;
+		}
+		ft_putstr_fd("\n", 1);
+		i++;
+	}
+}
 
 void	ft_handle_arg(int ac, char const **av)
 {
@@ -38,12 +59,14 @@ int	main(int ac, char const **av)
 	fd = open(av[1], O_RDONLY);
 	fdf.map = ft_init_map(fd);
 	close(fd);
-	fd = 0;
-	while (fdf.map.rows[fd])
+	if (fdf.map.w == (size_t) -1)
 	{
-		ft_putstr_fd(fdf.map.rows[fd], 1);
-		fd++;
+		ft_free_map(fdf.map);
+		ft_putstr_fd("Error\n", 1);
+		exit(0);
 	}
+	
+	test_map(fdf.map);
 	ft_free_map(fdf.map);
 	return (0);
 }
